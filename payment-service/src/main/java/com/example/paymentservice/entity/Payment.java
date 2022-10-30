@@ -1,4 +1,4 @@
-package com.javatechie.ps.api.entity;
+package com.example.paymentservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
