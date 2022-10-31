@@ -1,36 +1,23 @@
-package com.example.service;
+package com.example.spring_microservice_apigateway_orderservice.service;
 
-import com.example.entity.Order;
-import com.example.reponsitory.OrderRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.spring_microservice_apigateway_orderservice.entity.Order;
+import com.example.spring_microservice_apigateway_orderservice.reponsitory.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
-//@RefreshScope
 public class OrderService {
 
     Logger logger= LoggerFactory.getLogger(OrderService.class);
     @Autowired
     private OrderRepository repository;
 
-    @Autowired
-    @Lazy
-    private RestTemplate template;
-
-    @Value("${microservice.payment-service.endpoints.endpoint.uri}")
-    private String ENDPOINT_URL;
-
-    public Order saveOrder(Order order) {
+    public Order saveOder(Order order)
+    {
         return repository.save(order);
     }
-
 //    public TransactionResponse saveOrder(TransactionRequest request) throws JsonProcessingException {
 //        String response = "";
 //        Order order = request.getOrder();

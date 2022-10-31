@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.spring_microservice_apigateway_orderservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,3 +20,4 @@ public class Order {
     private int qty;
     private double price;
 }
+
